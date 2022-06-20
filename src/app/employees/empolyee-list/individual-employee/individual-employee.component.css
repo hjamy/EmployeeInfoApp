@@ -1,0 +1,13 @@
+a:hover {
+  color: black;
+}
+
+.card img {
+  height: 70px;
+  width: 60px;
+  /* border-radius: 50%; */
+}
+
+.card {
+  border: none;
+}

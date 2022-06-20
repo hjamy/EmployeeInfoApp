@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <app-empolyee-list
+                (employeeWasSelected)="selectedEmployee = $event"></app-empolyee-list>
+        </div>
+        <div class="col-md-7">
+            <app-empolyee-detail
+                *ngIf="selectedEmployee; else notSelected"
+                [employee]="selectedEmployee"></app-empolyee-detail>
+            <ng-template #notSelected>
+                Please Select an Employee
+            </ng-template>
+        </div>
+    </div>
+</div>

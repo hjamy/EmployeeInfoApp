@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-xs-12">
+        <app-employer-edit
+          (employerAdded)="onEmployerAdded($event)"></app-employer-edit>
+        <hr>
+        <ul class="list-group">
+            <a
+              class="list-group-item"
+              style="cursor: pointer"
+              *ngFor="let employer of employers"
+            >
+              {{ employer.name }} ({{ employer.experience}})
+            </a>
+        </ul>
+    </div>
+</div>
