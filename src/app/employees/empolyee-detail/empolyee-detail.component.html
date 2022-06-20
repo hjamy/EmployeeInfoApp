@@ -9,6 +9,10 @@
     <div class="col-md-8">
       <div class="card-body">
         <h4 class="card-title">{{employee.name}}</h4>
+        <app-age
+            *ngFor="let birthday of birthdays"
+            [birthdate]="birthday"
+            [checkEmployeeName] = employee.name></app-age>
         <p class="card-text"><strong>{{employee.university}}</strong></p>
 
         <app-skill
@@ -29,6 +33,15 @@
           class="btn btn-primary mt-3"
           (click)="onSkillAdded(employee.name)"
           [disabled]="skillInput.value.length ===  0">Add</button>
+
+        <h6 class="pt-3">Enter Date of Birth</h6>
+        <input type="date" [(ngModel)]="changed"/>
+        <br>
+        <button 
+          class="btn btn-warning mt-3"
+          (click)="onClick(employee.name)">Change</button>
+          
+        <!-- <h2>{{birthDate}}</h2> -->
       </div>
     </div>
   </div>

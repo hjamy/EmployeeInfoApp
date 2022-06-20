@@ -1,6 +1,7 @@
 import { Employee } from './../employee.model';
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Skill } from 'src/app/shared/skill.model';
+import { Birthday } from 'src/app/shared/birthday.model';
 
 @Component({
   selector: 'app-empolyee-detail',
@@ -14,6 +15,10 @@ export class EmpolyeeDetailComponent implements OnInit {
     
   ];
 
+  birthdays: Birthday[] = [
+    
+  ];
+
   // rezwanSkills: Skill[]=[
 
   // ];
@@ -23,9 +28,12 @@ export class EmpolyeeDetailComponent implements OnInit {
   // ];
 
   @ViewChild('skillInput') skillInputRef!: ElementRef;
-
   @Input() employee!: Employee;
   checkEmployeeName!: string;
+
+  // @Output() selectedAge = new EventEmitter<Birthday>();
+
+  // @Output() ageSelected = new EventEmitter<Birthday>();
 
   constructor() { }
 
@@ -52,4 +60,35 @@ export class EmpolyeeDetailComponent implements OnInit {
     this.skillInputRef.nativeElement.focus();
   }
 
+  changed!: Date;
+
+  // SendDataonChange(event: any) {
+  //   // console.log(event.target.value);
+  // }
+
+  onClick(empName: string) {
+    const birthDate = this.changed;
+    const employeeName = empName;
+    const birthday = new Birthday(employeeName, birthDate);
+
+    // let filteredClasses = this.birthdays.filter(cls => employeeName.includes(cls.empName));
+    // if(filteredClasses.length === 0){
+    //   this.birthdays.push(birthday);
+    // }
+    // else{
+    //   let filteredClasses = this.birthdays.filter(cls => employeeName.includes(cls.empName));
+    //   console.log(filteredClasses);
+    // }
+
+      const index = this.birthdays.findIndex(object => {
+        return object.empName === empName;
+      });
+      
+      if (index !== -1) {
+        this.birthdays[index].day = birthDate;
+      }
+      else {
+        this.birthdays.push(birthday);
+      }
+  }
 }

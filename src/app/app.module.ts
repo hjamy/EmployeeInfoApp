@@ -11,6 +11,8 @@ import { EmployerListComponent } from './employer-list/employer-list.component';
 import { EmployerEditComponent } from './employer-list/employer-edit/employer-edit.component';
 import { SkillComponent } from './employees/empolyee-detail/skill/skill.component';
 import { FormsModule } from '@angular/forms';
+import { AgeComponent } from './employees/empolyee-detail/age/age.component';
+import { AgepipePipe } from './employees/empolyee-detail/age/agepipe.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     EmpolyeeDetailComponent,
     EmployerListComponent,
     EmployerEditComponent,
-    SkillComponent
+    SkillComponent,
+    AgeComponent,
+    AgepipePipe
   ],
   imports: [
     BrowserModule,
