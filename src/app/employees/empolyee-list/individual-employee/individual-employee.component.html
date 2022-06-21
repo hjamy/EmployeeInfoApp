@@ -1,4 +1,4 @@
-<a 
+<a  
     href="#"
     class="list-group-item clearfix"
     (click)="onSelected()"
@@ -14,6 +14,9 @@
             <!-- <div class="col-md-8"> -->
                 <!-- <div class="card-body"> -->
                     <h4 class="card-title">{{employee.name}}</h4>
+                    <span 
+                        [appMostExperienced] = "employee.exp === mostExperienced.exp"
+                        class="badge text-bg-info">{{employee.exp}}</span>
                     <!-- <p class="card-text">{{employee.university}}</p> -->
                 <!-- </div> -->
             <!-- </div> -->

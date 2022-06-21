@@ -1,5 +1,6 @@
 
 <app-individual-employee
+    [mostExperienced]="mostExperienced"
     *ngFor="let employeeEl of employees"
     [employee]="employeeEl"
     (employeeSelected)="onEmployeeSelected(employeeEl)"></app-individual-employee>

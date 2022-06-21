@@ -11,3 +11,16 @@ a:hover {
 .card {
   border: none;
 }
+
+.card {
+  position: relative;
+}
+.card > span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.highlight {
+  background: rgb(0, 255, 106) !important;
+}

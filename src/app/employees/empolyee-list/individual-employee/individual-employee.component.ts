@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class IndividualEmployeeComponent implements OnInit {
 
+  @Input() mostExperienced!: Employee;
   @Input() employee!: Employee;
   @Output() employeeSelected = new EventEmitter<void>();
 

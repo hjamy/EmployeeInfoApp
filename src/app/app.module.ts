@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { AgeComponent } from './employees/empolyee-detail/age/age.component';
 import { AgepipePipe } from './employees/empolyee-detail/age/agepipe.pipe';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { MostExperiencedDirective } from './shared/most-experienced.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
     SkillComponent,
     AgeComponent,
     AgepipePipe,
-    DropdownDirective
+    DropdownDirective,
+    MostExperiencedDirective
   ],
   imports: [
     BrowserModule,
