@@ -35,11 +35,14 @@
           [disabled]="skillInput.value.length ===  0">Add</button>
 
         <h6 class="pt-3">Enter Date of Birth</h6>
-        <input type="date" [(ngModel)]="changed"/>
+        <input 
+          type="date" 
+          [(ngModel)]="changed"/>
         <br>
         <button 
           class="btn btn-warning mt-3"
-          (click)="onClick(employee.name)">Change</button>
+          (click)="onClick(employee.name)"
+          [disabled]="!changed">Change</button>
           
         <!-- <h2>{{birthDate}}</h2> -->
       </div>
